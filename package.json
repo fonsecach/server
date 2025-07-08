@@ -6,15 +6,23 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
-    "start": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts"
+    "dev": "npm run format && node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+    "start": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "2.0.6",
     "@types/node": "^24.0.10",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "ultracite": "5.0.32"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
