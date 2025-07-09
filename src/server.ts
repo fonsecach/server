@@ -20,4 +20,4 @@ app.get('/health', async () => {
   return await Promise.resolve({ status: 'ok' });
 });
 
-app.listen({ port: env.PORT })
+app.listen({ port: env.PORT });
